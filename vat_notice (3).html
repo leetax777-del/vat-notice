@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026년 1기 부가가치세 확정신고 안내</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F5F4F0;
+    --panel:#FFFFFF;
+    --ink:#1D2422;
+    --ink-soft:#5B645F;
+    --pine:#0F3D3B;
+    --pine-deep:#0A2B29;
+    --bronze:#A9784F;
+    --line:#D9D5C9;
+    --tag-bg:#EFEAE0;
+  }
+
+  *{box-sizing:border-box;}
+
+  html,body{
+    margin:0;
+    padding:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Pretendard', -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    max-width:840px;
+    margin:48px auto;
+    background:var(--panel);
+    border:1px solid var(--line);
+    box-shadow:0 1px 2px rgba(20,30,28,0.04), 0 12px 32px rgba(20,30,28,0.06);
+  }
+
+  .brand-bar{
+    padding:32px 56px 28px;
+    background:var(--panel);
+    border-bottom:1px solid var(--line);
+    display:flex;
+    justify-content:center;
+  }
+  .brand-bar img{
+    height:52px;
+    width:auto;
+    display:block;
+  }
+
+  /* ===== Header ===== */
+  .doc-header{
+    position:relative;
+    padding:52px 56px 40px;
+    background:var(--pine-deep);
+    color:#F2F0E8;
+    overflow:hidden;
+  }
+  .doc-header::after{
+    content:"";
+    position:absolute;
+    right:-60px; top:-60px;
+    width:220px; height:220px;
+    border:1px solid rgba(242,240,232,0.14);
+    border-radius:50%;
+  }
+  .doc-header::before{
+    content:"";
+    position:absolute;
+    right:10px; top:20px;
+    width:150px; height:150px;
+    border:1px solid rgba(242,240,232,0.10);
+    border-radius:50%;
+  }
+  .eyebrow{
+    font-size:12.5px;
+    letter-spacing:0.18em;
+    color:#C9B896;
+    font-weight:600;
+    margin-bottom:14px;
+  }
+  h1{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:30px;
+    line-height:1.4;
+    margin:0 0 18px;
+    letter-spacing:-0.01em;
+    max-width:480px;
+  }
+  .header-meta{
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top:22px;
+    font-size:13.5px;
+    color:#D8D4C6;
+  }
+  .header-meta div{ display:flex; flex-direction:column; gap:3px; }
+  .header-meta span.label{ font-size:11px; letter-spacing:0.06em; color:#9CB0A9; }
+  .header-meta span.val{ font-size:15px; color:#F2F0E8; font-weight:600; }
+
+  /* ===== Body ===== */
+  .doc-body{ padding:8px 56px 56px; }
+
+  .section{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:0 28px;
+    padding:40px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .section:last-child{ border-bottom:none; }
+
+  .section-index{
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--bronze);
+    font-weight:600;
+    padding-top:4px;
+  }
+  .section-index small{
+    display:block;
+    font-family:'Pretendard';
+    font-size:10.5px;
+    color:var(--ink-soft);
+    letter-spacing:0.08em;
+    margin-top:4px;
+    font-weight:500;
+  }
+
+  .section h2{
+    font-family:'Noto Serif KR', serif;
+    font-size:20px;
+    font-weight:600;
+    margin:0 0 6px;
+    color:var(--pine-deep);
+  }
+  .section .lede{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin:0 0 22px;
+    line-height:1.6;
+  }
+
+  ul.plain{ list-style:none; margin:0; padding:0; }
+  ul.plain li{
+    position:relative;
+    padding:9px 0 9px 18px;
+    font-size:14.5px;
+    line-height:1.65;
+    border-top:1px solid #EEECE5;
+  }
+  ul.plain li:first-child{ border-top:none; }
+  ul.plain li::before{
+    content:"";
+    position:absolute;
+    left:0; top:19px;
+    width:5px; height:5px;
+    background:var(--pine);
+    border-radius:50%;
+  }
+  ul.plain li strong{ color:var(--pine-deep); font-weight:600; }
+
+  .tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:6px;
+  }
+  .tag{
+    font-size:13px;
+    padding:8px 14px;
+    background:var(--tag-bg);
+    border:1px solid var(--line);
+    color:var(--ink);
+    border-radius:2px;
+  }
+
+  .note{
+    margin-top:16px;
+    padding:16px 18px;
+    background:#F7F5EF;
+    border-left:2px solid var(--bronze);
+    font-size:13.5px;
+    line-height:1.65;
+    color:#3D4643;
+  }
+  .note .note-label{
+    display:block;
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    color:var(--bronze);
+    font-weight:700;
+    margin-bottom:6px;
+  }
+
+  .caution{
+    margin-top:16px;
+    padding:16px 18px;
+    background:#FBF3EE;
+    border-left:2px solid #B8542F;
+    font-size:13.5px;
+    line-height:1.65;
+    color:#5A2E1B;
+  }
+  .caution .note-label{
+    display:block;
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    color:#B8542F;
+    font-weight:700;
+    margin-bottom:6px;
+  }
+
+  .exempt-box{
+    padding:24px 24px 26px;
+    background:var(--pine-deep);
+    color:#EDEAE0;
+    margin-bottom:26px;
+    font-size:14px;
+    line-height:1.7;
+    border:1px solid var(--pine-deep);
+  }
+  .exempt-box .note-label{
+    font-size:17px;
+    letter-spacing:0.01em;
+    color:#F2F0E8;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+    font-family:'Noto Serif KR', serif;
+  }
+  .exempt-box .note-label::before{
+    content:"";
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:var(--bronze);
+    flex:none;
+  }
+  .exempt-box ul{ margin:0; padding-left:18px; font-size:14.5px; }
+  .exempt-box li{ margin-bottom:6px; }
+
+  h3.sub{
+    font-size:13px;
+    letter-spacing:0.03em;
+    color:var(--pine);
+    font-weight:700;
+    margin:26px 0 10px;
+    text-transform:none;
+  }
+  h3.sub:first-child{ margin-top:0; }
+
+  .platform-guide{
+    margin-top:18px;
+    padding:20px 22px 6px;
+    background:#F7F5EF;
+    border:1px solid var(--line);
+  }
+  .platform-guide > .note-label{
+    display:block;
+    font-size:10.5px;
+    letter-spacing:0.1em;
+    color:var(--bronze);
+    font-weight:700;
+    margin-bottom:16px;
+  }
+  .platform-block{ margin-bottom:22px; }
+  .platform-block h4{
+    font-size:14px;
+    font-weight:700;
+    color:var(--pine-deep);
+    margin:0 0 10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+  }
+  .platform-block h4::before{
+    content:"";
+    width:6px; height:6px;
+    background:var(--pine);
+    border-radius:50%;
+    flex:none;
+  }
+  ol.steps{
+    list-style:none;
+    margin:0;
+    padding:0;
+    counter-reset:step;
+  }
+  ol.steps li{
+    position:relative;
+    padding:7px 0 7px 32px;
+    font-size:13.5px;
+    line-height:1.6;
+    counter-increment:step;
+    border-top:1px solid #EAE7DE;
+    color:var(--ink);
+  }
+  ol.steps li:first-child{ border-top:none; }
+  ol.steps li::before{
+    content:counter(step);
+    position:absolute;
+    left:0; top:7px;
+    width:20px; height:20px;
+    border-radius:50%;
+    background:var(--pine);
+    color:#F2F0E8;
+    font-size:10.5px;
+    font-weight:700;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  /* ===== Timeline (signature element) ===== */
+  .timeline{
+    position:relative;
+    margin-left:2px;
+    padding-left:26px;
+    border-left:2px solid var(--line);
+  }
+  .tl-item{
+    position:relative;
+    padding-bottom:26px;
+  }
+  .tl-item:last-child{ padding-bottom:0; }
+  .tl-item::before{
+    content:"";
+    position:absolute;
+    left:-31px; top:2px;
+    width:10px; height:10px;
+    border-radius:50%;
+    background:var(--panel);
+    border:2px solid var(--pine);
+  }
+  .tl-item.final::before{
+    background:var(--bronze);
+    border-color:var(--bronze);
+  }
+  .tl-date{
+    font-family:'Noto Serif KR', serif;
+    font-weight:600;
+    font-size:17px;
+    color:var(--pine-deep);
+  }
+  .tl-item.final .tl-date{ color:var(--bronze); }
+  .tl-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    margin-top:4px;
+    line-height:1.6;
+  }
+
+  /* ===== Footer ===== */
+  .doc-footer{
+    padding:30px 56px 42px;
+    border-top:1px solid var(--line);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .firm{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    line-height:1.6;
+  }
+  .firm strong{ color:var(--ink); font-weight:600; }
+  .stamp{
+    font-family:'Noto Serif KR', serif;
+    font-size:12px;
+    color:var(--bronze);
+    border:1px solid var(--bronze);
+    padding:8px 14px;
+    letter-spacing:0.08em;
+  }
+
+  @media (max-width:640px){
+    .sheet{ margin:0; border:none; }
+    .brand-bar{ padding:24px 24px 20px; }
+    .brand-bar img{ height:38px; }
+    .doc-header{ padding:36px 24px 30px; }
+    .doc-body{ padding:6px 24px 40px; }
+    .doc-footer{ padding:24px 24px 32px; }
+    .section{ grid-template-columns:1fr; }
+    .section-index{ display:flex; align-items:center; gap:8px; padding-top:0; margin-bottom:6px;}
+    .section-index small{ margin-top:0; }
+    h1{ font-size:24px; max-width:100%; }
+  }
+
+  @media print{
+    body{ background:#fff; }
+    .sheet{ box-shadow:none; margin:0; border:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <div class="brand-bar">
+    <img src="data:image/png;base64,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AABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABoniAUAAAAAGieIBQAAAAAaJ4gFAAAAABo3v8PvnUbkGLv78sAAAAASUVORK5CYII=" alt="세무회계 정도">
+  </div>
+
+  <header class="doc-header">
+    <div class="eyebrow">TAX NOTICE&nbsp;&nbsp;·&nbsp;&nbsp;부가가치세 확정신고</div>
+    <h1>2026년 1기 부가가치세<br>확정신고 안내</h1>
+    <div class="header-meta">
+      <div>
+        <span class="label">신고기한</span>
+        <span class="val">2026. 07. 27 (월)</span>
+      </div>
+      <div>
+        <span class="label">서류 제출 마감</span>
+        <span class="val">2026. 07. 13 (월)</span>
+      </div>
+      <div>
+        <span class="label">과세기간</span>
+        <span class="val">2026. 01. 01 ~ 06. 30</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="doc-body">
+
+    <!-- 01 신고대상자 -->
+    <section class="section">
+      <div class="section-index">01<small>대상자</small></div>
+      <div>
+        <h2>신고 대상자는 누구인가요</h2>
+        <p class="lede">아래에 해당하는 사업자는 이번 확정신고 대상입니다.</p>
+        <ul class="plain">
+          <li>개인 <strong>일반과세자</strong></li>
+          <li><strong>법인사업자</strong></li>
+          <li>과세유형 전환자 — 간이과세 → 일반과세, 또는 일반과세 → 간이과세로 전환된 사업자</li>
+          <li>간이과세자 중 <strong>상반기 세금계산서 발급 이력</strong>이 있는 자</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 02 준비서류 -->
+    <section class="section">
+      <div class="section-index">02<small>준비서류</small></div>
+      <div>
+        <h2>어떤 서류를 준비해야 하나요</h2>
+
+        <div class="exempt-box">
+          <span class="note-label">아래 자료는 별도로 제출하지 않으셔도 됩니다</span>
+          <ul>
+            <li>전자로 발행된 전자세금계산서 또는 계산서</li>
+            <li>법인신용카드(개인사업자는 홈택스 등록 사업용카드) 사용내역</li>
+            <li>신용카드·제로페이·현금영수증 매출자료</li>
+          </ul>
+        </div>
+
+        <h3 class="sub">매출관련자료 — 공통</h3>
+        <ul class="plain">
+          <li>종이로 발급한 수기세금계산서 또는 계산서</li>
+          <li>신용카드·제로페이·현금영수증 외 별도 매출(지역화폐 등)이 있는 경우 해당 매출내역서</li>
+          <li>현금영수증 미발행 계좌이체 매출이 있는 경우, 해당 기간 매출 합계액</li>
+        </ul>
+
+        <h3 class="sub">매출관련자료 — 업종별</h3>
+        <div class="tag-list">
+          <span class="tag">수출업</span>
+          <span class="tag">전자상거래업</span>
+          <span class="tag">콘텐츠제작업</span>
+          <span class="tag">음식점업</span>
+          <span class="tag">프랜차이즈업</span>
+          <span class="tag">약국·병원</span>
+          <span class="tag">부동산임대업</span>
+        </div>
+        <ul class="plain">
+          <li><strong>수출업</strong> — 수출내역을 입증할 수 있는 서류 (인보이스, 구매확인서, 수출신고필증 등)</li>
+          <li><strong>전자상거래업</strong> — 플랫폼(네이버, 쿠팡, 이니시스, 카카오 등) 매출내역서</li>
+          <li><strong>콘텐츠제작업</strong> — 영상플랫폼(유튜브, 인스타, 메타, 틱톡 등) 매출내역서</li>
+          <li><strong>음식점업</strong> — 중개플랫폼(배민, 요기요, 쿠팡이츠, 땡겨요 등) 매출내역서</li>
+          <li><strong>프랜차이즈업</strong> — 본사 지원금·쿠폰 등이 있는 경우 사이트 다운로드 월별매출내역서</li>
+          <li><strong>약국·병원</strong> — 요양급여·의료급여 매출내역서, 플랫폼·결제대행사 이용 시 해당 매출내역서</li>
+          <li><strong>부동산임대업</strong> — 부동산 임대 변동내역</li>
+        </ul>
+        <div class="note">
+          <span class="note-label">참고</span>
+          새롭게 거래하게 된 플랫폼이 있다면 놓치지 말고 담당자에게 전달해 주세요. 외화로 매출을 수령하는 경우 외화통장 거래내역과 입금확인서 등 입증서류도 함께 준비해 주세요.
+        </div>
+
+        <div class="platform-guide">
+          <span class="note-label">대표적 전자상거래 플랫폼별 매출자료 다운로드 방법 예시</span>
+
+          <div class="platform-block">
+            <h4>네이버 스마트스토어</h4>
+            <ol class="steps">
+              <li>정산관리 메뉴로 이동</li>
+              <li>부가세 신고내역 선택</li>
+              <li>기간을 2026.01.01 ~ 06.30으로 설정 후 다운로드</li>
+              <li>항목별 정산내역 → 혜택 정산 → 세금신고기준일 2026.01.01 ~ 06.30으로 검색 후 다운로드</li>
+            </ol>
+          </div>
+
+          <div class="platform-block">
+            <h4>네이버페이</h4>
+            <ol class="steps">
+              <li>네이버페이센터 로그인 후 2차 인증 진행</li>
+              <li>상단 메뉴에서 정산관리 → 부가세신고 선택</li>
+              <li>조회기간 설정 후 검색, 월별내역 다운으로 엑셀파일 저장</li>
+              <li>필요 시 해당 화면 캡처 또는 다운로드한 파일을 담당자에게 전달</li>
+            </ol>
+          </div>
+
+          <div class="platform-block">
+            <h4>쿠팡윙</h4>
+            <ol class="steps">
+              <li>쿠팡윙 로그인 후 정산 메뉴로 이동</li>
+              <li>부가세 신고내역 선택</li>
+              <li>기간을 2026.01.01 ~ 06.30으로 설정 후 검색</li>
+              <li>상세다운로드 후 담당자에게 전달</li>
+            </ol>
+          </div>
+
+          <div class="platform-block">
+            <h4>토스페이먼츠</h4>
+            <ol class="steps">
+              <li>토스페이먼츠 상점관리자 로그인 후 내 상점 선택</li>
+              <li>결제 조회 → 부가세 신고 자료 메뉴 선택</li>
+              <li>조회 기간(분기·반기·연간) 설정 후 조회</li>
+              <li>엑셀 다운로드 후 담당자에게 전달</li>
+            </ol>
+          </div>
+
+          <div class="platform-block">
+            <h4>다날</h4>
+            <ol class="steps">
+              <li>다날 파트너센터 로그인</li>
+              <li>정산/세금 → 부가세 신고 자료 조회 메뉴 선택</li>
+              <li>조회 기간 설정 후 검색</li>
+              <li>엑셀 다운로드 후 담당자에게 전달</li>
+            </ol>
+          </div>
+        </div>
+
+        <h3 class="sub">매입관련자료</h3>
+        <ul class="plain">
+          <li>종이로 받은 수기세금계산서 또는 계산서</li>
+          <li>홈택스 미등록 카드 지출내역 (개인사업자)</li>
+          <li>대표자·직원 개인카드를 업무용으로 사용한 경우, 카드사명·전체번호·지출내역</li>
+        </ul>
+        <div class="note">
+          <span class="note-label">전달 방법</span>
+          홈택스 미등록 카드 지출내역은 엑셀파일로 전달해 주세요. 거래처의 사업자등록번호가 반드시 포함되어야 합니다.
+        </div>
+        <div class="caution">
+          <span class="note-label">확인 필수</span>
+          개인카드 지출내역 전달 시 카드번호는 마스킹(****) 없이 전체 번호로 보내주세요.
+        </div>
+
+        <h3 class="sub">추가자료</h3>
+        <ul class="plain">
+          <li>법인사업자 및 성실신고대상자 — <strong>2026.01.01 ~ 06.30 통장거래내역 엑셀파일</strong></li>
+          <li>법인카드 사용액 중 접대비 또는 개인적 용도로 지출한 내역이 있다면 별도로 알려주세요</li>
+          <li>소모품이 아닌 비품 등 자산을 구입한 경우, 해당 내용을 알려주세요</li>
+          <li>오픈마켓(네이버, 11번가, 쿠팡 등) 지출이 사업용 지출이 맞는지 확인해 주세요</li>
+        </ul>
+        <div class="note">
+          <span class="note-label">참고</span>
+          거래은행 사이트 아이디·비밀번호를 이미 전달해 주신 경우, 통장거래내역은 저희가 직접 취합하므로 별도로 제출하지 않으셔도 됩니다.
+        </div>
+        <div class="caution">
+          <span class="note-label">주의</span>
+          사업용으로 지출하지 않은 내역에서 부가가치세를 공제받은 경우, 추후 추징 및 가산세가 발생할 수 있습니다.
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 신고일정 -->
+    <section class="section">
+      <div class="section-index">03<small>신고일정</small></div>
+      <div>
+        <h2>신고는 어떻게 진행되나요</h2>
+        <p class="lede">자료 제출부터 신고 완료까지의 일정을 안내드립니다.</p>
+
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-date">오늘 ~ 7월 13일</div>
+            <div class="tl-desc">미발급·미수취 세금계산서를 확인하고, 매출·매입 관련 서류를 정리하여 담당자에게 전달해 주세요.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-date">7월 13일 (월)</div>
+            <div class="tl-desc">서류 제출 마감일입니다. 이후 도착하는 자료는 신고 처리에 반영되지 못할 수 있습니다.</div>
+          </div>
+          <div class="tl-item final">
+            <div class="tl-date">7월 27일 (월)</div>
+            <div class="tl-desc">부가가치세 확정신고 및 납부 기한입니다.</div>
+          </div>
+        </div>
+
+        <div class="note" style="margin-top:24px;">
+          <span class="note-label">일정 안내</span>
+          납부서를 마감일 며칠 전에 미리 보내드리는 점을 감안하면, 실제 서류 검토가 가능한 기간은 길지 않습니다. 준비하실 서류가 있다면 최대한 빠른 시일 내에 담당자에게 전달해 주시기 바랍니다.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="doc-footer">
+    <div class="firm">
+      <strong>세무회계 정도</strong><br>
+      문의사항은 담당자에게 연락해 주세요.
+    </div>
+    <div class="stamp">부가가치세 신고 안내</div>
+  </footer>
+
+</div>
+
+</body>
+</html>
